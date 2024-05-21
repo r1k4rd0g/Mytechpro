@@ -1,0 +1,200 @@
+{
+  "todotree": {
+    "tree": [
+      {
+        "key": 1716232713630,
+        "children": [
+          {
+            "key": 1716232735115,
+            "children": [
+              {
+                "key": 1716232765941,
+                "children": [],
+                "todo": {
+                  "content": "título de la tienda",
+                  "id": 1716232765941,
+                  "level": "default",
+                  "done": true,
+                  "start": 1716232765941,
+                  "focus": false,
+                  "end": 1716296482244
+                }
+              },
+              {
+                "key": 1716232779555,
+                "children": [],
+                "todo": {
+                  "content": "listado de categorias clickeables",
+                  "id": 1716232779555,
+                  "level": "default",
+                  "done": true,
+                  "start": 1716232779555,
+                  "focus": false,
+                  "end": 1716296483962
+                }
+              },
+              {
+                "key": 1716232795104,
+                "children": [],
+                "todo": {
+                  "content": "estilos con bootstrap o and",
+                  "id": 1716232795104,
+                  "level": "default",
+                  "done": true,
+                  "start": 1716232795104,
+                  "focus": false,
+                  "end": 1716296484809
+                }
+              }
+            ],
+            "todo": {
+              "content": "Crear archivo navbar.jsx",
+              "id": 1716232735115,
+              "level": "default",
+              "done": true,
+              "start": 1716232735115,
+              "focus": false,
+              "end": 1716296481581
+            }
+          }
+        ],
+        "todo": {
+          "content": "Crear una carpeta dentro Src llamada Navbar",
+          "id": 1716232713630,
+          "level": "danger",
+          "done": true,
+          "start": 1716232713630,
+          "focus": false,
+          "end": 1716300170334
+        }
+      },
+      {
+        "key": 1716232828654,
+        "children": [
+          {
+            "key": 1716232838815,
+            "children": [
+              {
+                "key": 1716232846039,
+                "children": [],
+                "todo": {
+                  "content": "Icono",
+                  "id": 1716232846039,
+                  "level": "default",
+                  "done": true,
+                  "start": 1716232846039,
+                  "focus": false,
+                  "end": 1716296489595
+                }
+              },
+              {
+                "key": 1716232876793,
+                "children": [],
+                "todo": {
+                  "content": "Notificación estática ahora",
+                  "id": 1716232876793,
+                  "level": "default",
+                  "done": true,
+                  "start": 1716232876793,
+                  "focus": false,
+                  "end": 1716296491897
+                }
+              },
+              {
+                "key": 1716232895034,
+                "children": [],
+                "todo": {
+                  "content": "Debe estar dentro de navbar.jsx",
+                  "id": 1716232895034,
+                  "level": "default",
+                  "done": true,
+                  "start": 1716232895034,
+                  "focus": false,
+                  "end": 1716296492958
+                }
+              }
+            ],
+            "todo": {
+              "content": "Con su respectivo archivo y lo siguiente:",
+              "id": 1716232838815,
+              "level": "default",
+              "done": true,
+              "start": 1716232838815,
+              "focus": false,
+              "end": 1716296494264
+            }
+          }
+        ],
+        "todo": {
+          "content": "Otro componenete llamado cartwidget",
+          "id": 1716232828654,
+          "level": "default",
+          "done": true,
+          "start": 1716232828654,
+          "focus": false,
+          "end": 1716296494863
+        }
+      },
+      {
+        "key": 1716232906713,
+        "children": [
+          {
+            "key": 1716232923017,
+            "children": [],
+            "todo": {
+              "content": "Con su respectivo archivio y con un prop greeting",
+              "id": 1716232923017,
+              "level": "default",
+              "done": true,
+              "start": 1716232923017,
+              "focus": false,
+              "end": 1716300166702
+            }
+          }
+        ],
+        "todo": {
+          "content": "Otro componente llamado ItemListContainer",
+          "id": 1716232906713,
+          "level": "default",
+          "done": true,
+          "start": 1716232906713,
+          "focus": false,
+          "end": 1716300165944
+        }
+      },
+      {
+        "key": 1716232943545,
+        "children": [],
+        "todo": {
+          "content": "Itemlist debe estar debajo de navbar.js, en el archivo de app.js",
+          "id": 1716232943545,
+          "level": "default",
+          "done": true,
+          "start": 1716232943545,
+          "focus": false,
+          "end": 1716296505538
+        }
+      }
+    ],
+    "expandKeys": [
+      1716232713630,
+      1716232735115,
+      1716232828654,
+      1716232838815,
+      1716232846039,
+      1716232906713
+    ],
+    "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
+    "add_mode": "bottom",
+    "virtual": false,
+    "timelines": [],
+    "showLine": false,
+    "playFontSize": 24,
+    "title": "sepide",
+    "autoSort": false,
+    "showEndTime": false,
+    "simpleMode": false,
+    "lang": "es",
+    "version": "1716300170384"
+  }
+}
