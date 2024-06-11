@@ -174,15 +174,177 @@
           "focus": false,
           "end": 1716296505538
         }
+      },
+      {
+        "key": 1718044309116,
+        "children": [
+          {
+            "key": 1718044317053,
+            "children": [],
+            "todo": {
+              "content": "Navbar con cart",
+              "id": 1718044317053,
+              "level": "default",
+              "done": true,
+              "start": 1718044317053,
+              "focus": false,
+              "end": 1718061101879
+            }
+          },
+          {
+            "key": 1718044326575,
+            "children": [],
+            "todo": {
+              "content": "Catálogo",
+              "id": 1718044326575,
+              "level": "default",
+              "done": true,
+              "start": 1718044326575,
+              "focus": false,
+              "end": 1718061103590
+            }
+          },
+          {
+            "key": 1718044331298,
+            "children": [],
+            "todo": {
+              "content": "Detalle de producto",
+              "id": 1718044331298,
+              "level": "default",
+              "done": false,
+              "start": 1718044331298
+            }
+          },
+          {
+            "key": 1718044353365,
+            "children": [],
+            "todo": {
+              "content": "Se debe poder navegar entre catálogos y ver detalles de productos",
+              "id": 1718044353365,
+              "level": "default",
+              "done": true,
+              "start": 1718044353365,
+              "focus": false,
+              "end": 1718061111752
+            }
+          }
+        ],
+        "todo": {
+          "content": "Componentes:",
+          "id": 1718044309116,
+          "level": "default",
+          "done": false,
+          "start": 1718044309116
+        }
+      },
+      {
+        "key": 1718046234843,
+        "children": [
+          {
+            "key": 1718046243460,
+            "children": [],
+            "todo": {
+              "content": "/ - Para navegar al ItemListContainer",
+              "id": 1718046243460,
+              "level": "default",
+              "done": true,
+              "start": 1718046243460,
+              "focus": false,
+              "end": 1718061114064
+            }
+          },
+          {
+            "key": 1718046266862,
+            "children": [],
+            "todo": {
+              "content": "/category/:idCategory - Para navegar al ItemListContainer, pero filtrado por categoría",
+              "id": 1718046266862,
+              "level": "default",
+              "done": true,
+              "start": 1718046266862,
+              "focus": false,
+              "end": 1718061117371
+            }
+          },
+          {
+            "key": 1718046296562,
+            "children": [],
+            "todo": {
+              "content": "/item/:idItem - Para navegar al ItemDetailContainer",
+              "id": 1718046296562,
+              "level": "default",
+              "done": true,
+              "start": 1718046296562,
+              "focus": false,
+              "end": 1718068415603
+            }
+          }
+        ],
+        "todo": {
+          "content": "Rutas:",
+          "id": 1718046234843,
+          "level": "default",
+          "done": false,
+          "start": 1718046234843
+        }
+      },
+      {
+        "key": 1718046641276,
+        "children": [
+          {
+            "key": 1718046647845,
+            "children": [],
+            "todo": {
+              "content": "Brand debe navegar a /",
+              "id": 1718046647845,
+              "level": "default",
+              "done": true,
+              "start": 1718046647845,
+              "focus": false,
+              "end": 1718061911590
+            }
+          },
+          {
+            "key": 1718046662387,
+            "children": [],
+            "todo": {
+              "content": "Clickear un item debe llevar a item/:idItem",
+              "id": 1718046662387,
+              "level": "default",
+              "done": false,
+              "start": 1718046662387
+            }
+          },
+          {
+            "key": 1718046719913,
+            "children": [],
+            "todo": {
+              "content": "Clickear una categoría debe llevarte al /category/:idCategory",
+              "id": 1718046719913,
+              "level": "default",
+              "done": true,
+              "start": 1718046719913,
+              "focus": false,
+              "end": 1718061908340
+            }
+          }
+        ],
+        "todo": {
+          "content": "Links:",
+          "id": 1718046641276,
+          "level": "default",
+          "done": false,
+          "start": 1718046641276
+        }
       }
     ],
     "expandKeys": [
-      1716232713630,
       1716232735115,
-      1716232828654,
       1716232838815,
       1716232846039,
-      1716232906713
+      1718044309116,
+      1718046234843,
+      1718046641276
     ],
     "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
     "add_mode": "bottom",
@@ -195,6 +357,6 @@
     "showEndTime": false,
     "simpleMode": false,
     "lang": "es",
-    "version": "1716300170384"
+    "version": "1718068415662"
   }
 }

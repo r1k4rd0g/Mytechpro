@@ -1,0 +1,21 @@
+.productsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
+}
+.cardImgContainer{
+    overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
+    height: 200px; /* Ajusta la altura según tus necesidades */
+}
+.cardImg {
+    width: 100%;
+    height: 100%; /* Ajusta la altura automáticamente para mantener la proporción */
+    object-fit: contain; /* Asegúrate de que la imagen cubra todo el área sin deformarse */
+    max-height: auto; /* Limita la altura máxima de la imagen */
+    transition: transform 0.3s ease; /* Suaviza el efecto de zoom */
+}
+
+.cardImg:hover {
+    transform: scale(1.2); /* Aplica un zoom del 10% */
+}
