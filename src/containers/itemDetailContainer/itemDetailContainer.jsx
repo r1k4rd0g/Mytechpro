@@ -1,28 +1,25 @@
 
 import PropTypes from 'prop-types';
-import { getProducts } from '../../components/data/asyncMock';
+import { getProductById } from '../../components/data/asyncMock';
 import { useParams } from 'react-router-dom';
 
 
 export const ItemDetail = () => {
-    const { id } = useParams()
-    const { products } = getProducts()
-    console.log('consola 21', products)
-    const productFind = products.find (p => p.id === id)
-    if(!productFind){
-        //alert('Producto no encontrado');
-            return null;
-    }
+    const id  = useParams()
+    console.log('id de producto por parámetro', id)
+    const product = getProductById(id)
+    console.log('consola 21', product)
+
 
 
     return (
         <div className="product-detail">
-            <h2>{productFind.name}</h2>
+            <h2>{product.name}</h2>
             <div className="product-detail-image">
-                <img src={productFind.img} alt={productFind.name} />
+                <img src={product.img} alt={product.name} />
             </div>
-            <p>{productFind.detail}</p>
-            <p>${productFind.price}</p>
+            <p>{product.detail}</p>
+            <p>${product.price}</p>
         </div>
     );
 };

@@ -2,8 +2,9 @@ import './itemListContainer.css'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export function ProductCard({ id, name, img, detail, price }) {
+
     console.log('consola 22', id)
 
     return (

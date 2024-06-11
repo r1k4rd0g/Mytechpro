@@ -29,6 +29,7 @@ export const ItemListContainer = ({ greeting }) => {
                 {products.map(product => (
                     <ProductCard
                         key={product.id}
+                        id = {product.id}
                         name={product.name}
                         img={product.img}
                         detail={product.detail}

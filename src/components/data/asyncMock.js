@@ -171,3 +171,16 @@ export const getProducts = (idCategory) => {
         }, 1000)
     })
 }
+
+export const getProductById = (idItem) => {
+    console.log('id de producto a buscar', idItem);
+    const idSearch = idItem.idItem;
+    const productSearch = idSearch
+        ? productsList.find(p => p.id === parseInt(idSearch))
+        : null;
+
+    if (!productSearch) {
+        throw new Error('producto no encontrado');
+    }
+    return productSearch;
+};
