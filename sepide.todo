@@ -211,8 +211,10 @@
               "content": "Detalle de producto",
               "id": 1718044331298,
               "level": "default",
-              "done": false,
-              "start": 1718044331298
+              "done": true,
+              "start": 1718044331298,
+              "focus": false,
+              "end": 1718071013454
             }
           },
           {
@@ -233,8 +235,10 @@
           "content": "Componentes:",
           "id": 1718044309116,
           "level": "default",
-          "done": false,
-          "start": 1718044309116
+          "done": true,
+          "start": 1718044309116,
+          "focus": false,
+          "end": 1718071017478
         }
       },
       {
@@ -284,8 +288,10 @@
           "content": "Rutas:",
           "id": 1718046234843,
           "level": "default",
-          "done": false,
-          "start": 1718046234843
+          "done": true,
+          "start": 1718046234843,
+          "focus": false,
+          "end": 1718071018366
         }
       },
       {
@@ -311,8 +317,10 @@
               "content": "Clickear un item debe llevar a item/:idItem",
               "id": 1718046662387,
               "level": "default",
-              "done": false,
-              "start": 1718046662387
+              "done": true,
+              "start": 1718046662387,
+              "focus": false,
+              "end": 1718071012074
             }
           },
           {
@@ -333,8 +341,10 @@
           "content": "Links:",
           "id": 1718046641276,
           "level": "default",
-          "done": false,
-          "start": 1718046641276
+          "done": true,
+          "start": 1718046641276,
+          "focus": false,
+          "end": 1718071019006
         }
       }
     ],
@@ -357,6 +367,6 @@
     "showEndTime": false,
     "simpleMode": false,
     "lang": "es",
-    "version": "1718068415662"
+    "version": "1718071019043"
   }
 }

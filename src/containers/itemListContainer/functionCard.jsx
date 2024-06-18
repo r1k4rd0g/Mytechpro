@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 export function ProductCard({ id, name, img, detail, price }) {
 
-    console.log('consola 22', id)
+    console.log('consola desde functionCard.jsx, id de producto:', id)
 
     return (
         <Card style={{ width: '18rem' }}>

@@ -6,9 +6,9 @@ import { useParams } from 'react-router-dom';
 
 export const ItemDetail = () => {
     const id  = useParams()
-    console.log('id de producto por parámetro', id)
+    console.log('id de producto por parámetro desde itemDetailContainer.jsx', id)
     const product = getProductById(id)
-    console.log('consola 21', product)
+    console.log('consola products desde itemDetailContainer.jsx', product)
 
 
 

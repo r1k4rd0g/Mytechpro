@@ -7,8 +7,8 @@ import './itemListContainer.css'
 export const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
     const { idCategory } = useParams();
-    console.log('params: ', idCategory);
-    console.log("products", products);
+    console.log('consola desde itemListContainer, idCategory que llega desde useParams: ', idCategory);
+    console.log("consola desde itemListContainer, productos: ", products);
 
     useEffect(() => {
         if (!idCategory) {
