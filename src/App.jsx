@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Navbar /> {/*el navbar queda fuera de routes, para que se vea en todas las secciones*/}
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting='Bienvenido' />}/>
+          <Route path='/' element={<ItemListContainer/>}/>
           <Route exact path='/category/:idCategory' element={<ItemListContainer/>}/>
           <Route path='/item/:idItem' element={<ItemDetail/>}/>
           <Route path='*' element={<NotFound/>}/>

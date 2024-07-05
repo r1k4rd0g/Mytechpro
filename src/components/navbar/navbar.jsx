@@ -2,21 +2,23 @@ import './navbar.css'
 import { Link } from 'react-router-dom';
 import { Dropdown, Button } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-import { CartWidget } from "../cartwidget/cartwidget"
+import { CartWidget } from "../cartWidgets/cartWidgets"
 
 
 const items = [
-    { key: "1", label: <Link to="/category/Electrónica">Electrónica</Link> },
-    { key: "2", label: <Link to="/category/Calzado">Calzado</Link> },
-    { key: "3", label: <Link to="/category/Deportes">Deportes</Link> },
-    { key: "4", label: <Link to="/category/Electrodomésticos">Electrodomésticos</Link> },
+    { key: "1", label: <Link to="/category/Consolas">Consolas</Link> },
+    { key: "2", label: <Link to="/category/Cámaras">Cámaras</Link> },
+    { key: "3", label: <Link to="/category/Laptops">Laptops</Link> },
+    { key: "4", label: <Link to="/category/Smartphone">Smartphone</Link> },
+    { key: "5", label: <Link to="/category/Televisores">Televisores</Link> },
+    { key: "5", label: <Link to="/category/Wearables">Wearables</Link> },
 ];
 export const Navbar = () => {
     return (
         <nav className='contNavBar'>
             <div>
                 <Link to={'/'}>
-                    <h1 className='titulo'>Bienvenido a Mytechpro <br></br>Tu tienda online de tecnología</h1>
+                    <h1 className='titulo'>Bienvenido a Mytechpro</h1><h2>Tu tienda online de tecnología</h2>
                 </Link>
             </div>
             <div className='navBar'>

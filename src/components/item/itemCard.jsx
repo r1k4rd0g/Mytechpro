@@ -1,11 +1,11 @@
-import './itemListContainer.css'
+import '../../containers/itemListContainer/itemListContainer.css'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 export function ProductCard({ id, name, img, detail, price }) {
-
-    console.log('consola desde functionCard.jsx, id de producto:', id)
+    const idItem = id
+    console.log('consola desde ProductCard.jsx, id de producto:', id)
 
     return (
         <Card style={{ width: '18rem' }}>
@@ -16,7 +16,7 @@ export function ProductCard({ id, name, img, detail, price }) {
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>{detail}</Card.Text>
                 <Card.Text>${price}</Card.Text>
-                <Link to={`/item/${id}`}>
+                <Link to={`/item/${idItem}`}>
                     <Button variant="primary">Ver</Button>
                 </Link>
             </Card.Body>

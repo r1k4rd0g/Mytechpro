@@ -1,0 +1,1 @@
+// tiene que contener la información del return del item detail container.

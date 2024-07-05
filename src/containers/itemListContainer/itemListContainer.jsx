@@ -1,30 +1,57 @@
-import { PropTypes } from 'prop-types';
+//Firebase:
+import { collection, getDocs} from 'firebase/firestore'
+import { db } from '../../firebase/client';
+import { ErrorAlert } from '../../components/utils/alert';
+import { LargeSpin } from '../../components/spinners/spinners';
+import { useLoading } from '../../customHooks/useLoading';
+
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProducts } from '../../components/data/asyncMock';
-import { ProductCard } from './functionCard'
+
 import './itemListContainer.css'
-export const ItemListContainer = ({ greeting }) => {
+import { ItemList } from '../itemList/itemList';
+
+//llama a los productos se los pasa a itemList. itemList recibe la lista de productos como una prop desde. ItemList los mapa y se los pasa por prop a item. Item recibe por prop y los detalla
+export const ItemListContainer = () => {
+    const [loading, startLoading, stopLoading] = useLoading()
     const [products, setProducts] = useState([]);
+    const [error, setError] = useState(null);
     const { idCategory } = useParams();
-    console.log('consola desde itemListContainer, idCategory que llega desde useParams: ', idCategory);
-    console.log("consola desde itemListContainer, productos: ", products);
+    const getProductsCollection = collection(db, "productos")
+    //console.log('consola desde itemListContainer, idCategory que llega desde useParams: ', idCategory);
+
 
     useEffect(() => {
-        if (!idCategory) {
-            getProducts()
-                .then(setProducts)
-                .catch(e => console.error(e))
-        } else {
-            getProducts(idCategory)
-                .then(setProducts)
-                .catch(e => console.error(e))
-        }
+        const fetchProducts = async () => {
+            startLoading();
+            try {
+                const data = await getDocs(getProductsCollection);
+                const allProducts = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+                if (idCategory) {
+                    const filteredProducts = allProducts.filter((product) => product.category === idCategory)
+                    setProducts(filteredProducts)
+                } else {
+                    setProducts(allProducts)
+                }
+            } catch (error) {
+                setError(error.message);
+                console.error('error fetching products: ', error)
+            } finally {
+                stopLoading()
+            }
+        };
+        fetchProducts();
     }, [idCategory])
+    if (loading) return <div><LargeSpin /></div>
+    if (error) return <div><ErrorAlert message={`Error fetching products: ${error}`} /></div>;
 
     return (
+        <div className='productsContainer'>
+            <ItemList products={products}/>
+        </div>
+    )
+    /*return (
         <div>
-            <h2>{greeting}</h2>
             <div className='productsContainer'>
                 {products.map(product => (
                     <ProductCard
@@ -38,9 +65,6 @@ export const ItemListContainer = ({ greeting }) => {
                 ))}
             </div>
         </div>
-    )
+    )*/
 }
 
-ItemListContainer.propTypes = {
-    greeting: PropTypes.string.isRequired
-}

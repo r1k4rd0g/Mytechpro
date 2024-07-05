@@ -1,14 +1,44 @@
 
-import PropTypes from 'prop-types';
-import { getProductById } from '../../components/data/asyncMock';
+import { useState, useEffect } from 'react';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../firebase/client';
+import { MediumSpin } from '../../components/spinners/spinners'
+import { useLoading } from '../../customHooks/useLoading';
+import { NotFound } from '../../components/statusPages/statusPages'
+import './itemDetailContainer'
 import { useParams } from 'react-router-dom';
 
 
 export const ItemDetail = () => {
-    const id  = useParams()
-    console.log('id de producto por parámetro desde itemDetailContainer.jsx', id)
-    const product = getProductById(id)
-    console.log('consola products desde itemDetailContainer.jsx', product)
+    const { idItem } = useParams()
+    console.log('id de producto por parámetro desde itemDetailContainer.jsx', idItem)
+    const [product, setProduct] = useState({})
+    const [loading, startLoading, stopLoading] = useLoading()
+
+    useEffect(() => {
+        const searchProduct = async () => {
+            startLoading();
+            try {
+                const productRef = doc(db, 'productos', idItem)
+                const productSnap = await getDoc(productRef)
+                if (productSnap.exists()) {
+                    setProduct({ id: productSnap.id, ...productSnap.data() });
+                } else {
+                    console.log('No existe el producto con el id: ', idItem)
+                }
+            } catch (error) {
+                console.error('No hay producto')
+            } finally {
+                stopLoading()
+            }
+        };
+        searchProduct();
+    }, [idItem])
+    if (loading) return <MediumSpin />
+    if (!product) return <NotFound />
+
+
+    //console.log('consola products desde itemDetailContainer.jsx', product)
 
 
 
@@ -21,17 +51,6 @@ export const ItemDetail = () => {
             <p>{product.detail}</p>
             <p>${product.price}</p>
         </div>
-    );
+    )
 };
 
-ItemDetail.propTypes = {
-    products: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            img: PropTypes.string.isRequired,
-            detail: PropTypes.string.isRequired,
-            price: PropTypes.number.isRequired,
-        })
-    ).isRequired,
-};
