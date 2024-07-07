@@ -55,7 +55,7 @@ export const Navbar = () => {
                             <Button type="primary" className='gradientButton' href="Login.html">Login</Button>
                         </li>
                     </Link>
-                    <Link to={'/cartwidget'}>
+                    <Link to={'/cart'}>
                         <li className='navBarList'><CartWidget /></li>
                     </Link>
                 </ul>

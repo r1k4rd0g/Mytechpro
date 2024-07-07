@@ -1,9 +1,10 @@
 //Firebase:
-import { collection, getDocs} from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase/client';
 import { ErrorAlert } from '../../components/utils/alert';
 import { LargeSpin } from '../../components/spinners/spinners';
 import { useLoading } from '../../customHooks/useLoading';
+import { SuccessNoti } from '../../components/notifications/notification';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -15,11 +16,10 @@ import { ItemList } from '../itemList/itemList';
 export const ItemListContainer = () => {
     const [loading, startLoading, stopLoading] = useLoading()
     const [products, setProducts] = useState([]);
+    const [noti, setNoti] = useState(null);
     const [error, setError] = useState(null);
     const { idCategory } = useParams();
     const getProductsCollection = collection(db, "productos")
-    //console.log('consola desde itemListContainer, idCategory que llega desde useParams: ', idCategory);
-
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -33,6 +33,12 @@ export const ItemListContainer = () => {
                 } else {
                     setProducts(allProducts)
                 }
+                setNoti(
+                    <SuccessNoti
+                        message="Productos cargados"
+                        description="Los productos se cargaron correctamente"
+                    />
+                );
             } catch (error) {
                 setError(error.message);
                 console.error('error fetching products: ', error)
@@ -47,24 +53,9 @@ export const ItemListContainer = () => {
 
     return (
         <div className='productsContainer'>
-            <ItemList products={products}/>
+            {noti}
+            <ItemList products={products} />
         </div>
     )
-    /*return (
-        <div>
-            <div className='productsContainer'>
-                {products.map(product => (
-                    <ProductCard
-                        key={product.id}
-                        id = {product.id}
-                        name={product.name}
-                        img={product.img}
-                        detail={product.detail}
-                        price={product.price}
-                    />
-                ))}
-            </div>
-        </div>
-    )*/
 }
 

@@ -1,26 +1,26 @@
 import { useState } from "react";
 
 export const useCounter = (valorInicial = 1, stock) => {
-    const [contador, setContador] = useState(valorInicial ?? 0)
+    const [quantity, setContador] = useState(valorInicial ?? 0)
     const sumar = () => {
-        if (contador < stock) {setContador(contador + 1)}
+        if (quantity < stock) {setContador(quantity + 1)}
     }
     const restar = () => {
-        if (contador > 1) {setContador(contador - 1)}
+        if (quantity > 1) {setContador(quantity - 1)}
     }
     const resetear = () => setContador(valorInicial)
 
-    const counterTyped = (value) =>{
+    const valueTyped = (value) =>{
         if(value >= 1 && value <= stock){
             setContador(value)
         }
     }
     return {
-        contador,
+        quantity,
         sumar,
         restar,
         resetear,
-        counterTyped
+        valueTyped
     }
 
 }
