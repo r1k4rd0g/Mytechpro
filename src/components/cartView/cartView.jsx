@@ -1,17 +1,23 @@
 import { List, Button, Row, Col, Typography } from 'antd'
 import { useCart } from '../../customHooks/useCart'
-//import { useCounter } from '../../customHooks/useCounter'
+import { CheckoutModal } from '../../containers/checkoutContainer/checkout'
+import { useState } from 'react'
 
 const { Title, Text } = Typography
 
 export const CartView = () => {
     const { cart, addQuantity, removeFromCart, clearCart, decreaseFromCart } = useCart();
+    const [showCheckoutModal, setShowCheckoutModal] = useState(false);
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0)
     const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0)
-    const product = cart.product
-    //const { quantity, sumar, restar, valueTyped } = useCounter(1, product.stock);
-    console.log('que tiene cart? ', cart)
-    console.log('que tiene product? ', product)
+
+    const handleCheckout = () => {
+        setShowCheckoutModal(true);
+    };
+
+    const handleCancel = () => {
+        setShowCheckoutModal(false);
+    };
 
     return (
         <div style={{ padding: '20px', width: '100%', backgroundColor: 'gray'}}>
@@ -47,8 +53,17 @@ export const CartView = () => {
                 </Col>
                 <Col span={12} style={{ textAlign: 'right' }}>
                     <Button onClick={clearCart}>Vaciar carrito</Button>
+                    <Button type="primary" onClick={handleCheckout} style={{ marginLeft: '10px' }}>
+                        Pagar
+                    </Button>
                 </Col>
             </Row>
+            <CheckoutModal
+                showModal={showCheckoutModal}
+                onCancel={handleCancel}
+                cart={cart}
+                clearCart={clearCart}
+            />
         </div>
     )
 }
