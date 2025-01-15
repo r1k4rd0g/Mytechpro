@@ -1,0 +1,4 @@
+.ant-table-tbody>tr:hover>td {
+    background-color: rgb(30, 128, 160)!important;
+    /* Cambia esto al color que prefieras */
+}

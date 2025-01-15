@@ -7,6 +7,7 @@ import { NotFound } from './components/statusPages/statusPages'
 import { ItemDetail } from './containers/itemDetailContainer/itemDetailContainer'
 import { CartProvider } from './context/cartContext'
 import { CartView } from './components/cartView/cartView'
+import CustomTable from './components/table'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path='/item/:idItem' element={<ItemDetail />} />
             <Route path='/cart' element={<CartView/>} />
             <Route path='*' element={<NotFound />} />
+            <Route path='/table' element={<CustomTable/>}/>
           </Routes>
         </BrowserRouter>
       </CartProvider>
